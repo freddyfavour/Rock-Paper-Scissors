@@ -53,13 +53,14 @@ function endgame() {
   computerScore = 0;
   main.style.filter = "blur(20px)";
   restart.style.display = "flex";
-  announce.innerText = `${getWinner()}!!!`;
+  const winnerMessage = getWinner();
+  announce.innerText = winnerMessage;
 }
 
 function getWinner() {
-  if (playerScore > computerScore) {
-    return "You have defeated o kakós";
-  } else {
-    return "o kakós has won and covered the Monde with darkness";
+  if (playerScore === 5) {
+    return "o kasos has been defeated!";
+  } else if (playerScore !== 5) {
+    return "o kasos has covered the world with darkness!";
   }
 }
